@@ -18,7 +18,7 @@ services:
     staticPublishPath: dist
     envVars:
       - key: VITE_API_URL
-        value: https://career-compass-api.onrender.com
+        value: https://career-compass-api-wpgn.onrender.com
     routes:
       - type: rewrite
         source: /*

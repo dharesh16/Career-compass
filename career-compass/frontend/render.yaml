@@ -2,7 +2,6 @@ services:
   - type: web
     name: career-compass-web
     runtime: static
-    plan: free
     buildCommand: "npm ci && npm run build"
     staticPublishPath: dist
     envVars:

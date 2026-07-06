@@ -1,8 +1,8 @@
 services:
   - type: web
     name: career-compass-api
-    env: python
-    root: career-compass/backend
+    runtime: python
+    rootDir: career-compass/backend
     plan: free
     buildCommand: "pip install -r requirements.txt"
     startCommand: "uvicorn main:app --host 0.0.0.0 --port $PORT"
@@ -12,11 +12,15 @@ services:
 
   - type: web
     name: career-compass-web
-    env: static
-    root: career-compass/frontend
+    runtime: static
+    rootDir: career-compass/frontend
     plan: free
-    buildCommand: "npm install && npm run build"
+    buildCommand: "npm ci && npm run build"
     staticPublishPath: dist
     envVars:
       - key: VITE_API_URL
         value: https://career-compass-api.onrender.com
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html

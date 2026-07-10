@@ -1,3 +1,6 @@
+#Click on this link to view my site 
+https://career-compass-web-ygql.onrender.com
+
 # Career Compass — Career Counselling & Guidance Mini Project
 
 A simple full-stack app: students take an 8-question interest quiz and get a
